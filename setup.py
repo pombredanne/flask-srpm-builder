@@ -6,7 +6,7 @@ setup(name='flask-srpm-builder', version='0.1',
       url='',
 
       install_requires=['flask',
-                        #  'MySQL-python',
+                        #  'python-rpm-spec',
                         #  'pymongo',
                         #  'psycopg2',
       ],
