@@ -41,7 +41,10 @@ def process_hooks():
         print("full_name = " + full_name)
 
     path = git.clone(clone_url, full_name, pusher["name"], branch)
-    srpm.parse_spec(git.parse_name(full_name), path)
+
+    srpm.generate_rpmbuild(git.parse_name(full_name), path)
+    srpm.spec_fetch_sources(git.parse_name(full_name), path)
+    srpm.spec_build_srpm(git.parse_name(full_name), path)
 
     branch = None
     pusher = None
